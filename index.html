@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>굿네이버스 Care — Mockups</title>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css"
+/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      fontFamily: { sans: ['Pretendard Variable', 'Pretendard', 'ui-sans-serif', 'system-ui'] },
+      colors: { brand: { 500: '#14b8a6', 600: '#0d9488' } },
+    } },
+  };
+</script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-50 to-brand-50/40 font-sans text-slate-900 antialiased">
+
+<div class="mx-auto max-w-4xl px-6 py-14">
+
+  <div class="mb-10 flex items-center gap-3">
+    <span class="grid h-10 w-10 place-items-center rounded-xl bg-brand-600 text-white shadow-lg">
+      <i data-lucide="shield-check" class="h-5 w-5"></i>
+    </span>
+    <div>
+      <h1 class="text-2xl font-bold tracking-tight">Aqara Open Lab · Care Platform</h1>
+      <p class="text-sm text-slate-500">어르신 거주 시설 생활 모니터링 솔루션 · 디자인 시안</p>
+    </div>
+  </div>
+
+  <p class="mb-10 rounded-xl border border-slate-200 bg-white p-5 text-sm leading-relaxed text-slate-600 shadow-sm">
+    Aqara IoT (모션 센서 · 도어 센서 · 환경 센서 등) 를 어르신 거주 시설에 설치하여
+    <strong>고독사 예방 · 활동 패턴 모니터링 · 가족 알림</strong> 을 통합 제공하는 플랫폼의 디자인 미리보기입니다.
+    각 화면은 반응형이며 다크모드를 지원합니다 (Chrome / Edge / Safari 최신 2 버전 호환).
+    <br/><br/>
+    <strong>주요 특징</strong>: 비접촉 모니터링 (영상 없음 · 프라이버시 보호) · 바둑판형 호실 상태 뷰 ·
+    디바이스별 알림 임계치 커스터마이즈 · 가족 모바일 접근 · 보안 중심의 Aqara 계정 연결.
+  </p>
+
+  <div class="grid gap-4 md:grid-cols-2">
+
+    <a href="dashboard-grid.html" class="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-lg">
+      <div class="aspect-video bg-gradient-to-br from-brand-500/10 to-brand-600/5 p-6">
+        <div class="mb-3 inline-flex items-center gap-1 rounded-full bg-brand-100 px-2 py-0.5 text-xs font-semibold text-brand-700">
+          <i data-lucide="layout-grid" class="h-3 w-3"></i> 메인 대시보드
+        </div>
+        <div class="grid grid-cols-6 gap-1.5">
+          <div class="aspect-square rounded bg-emerald-300"></div>
+          <div class="aspect-square rounded bg-emerald-300"></div>
+          <div class="aspect-square animate-pulse rounded border-2 border-red-500 bg-red-200"></div>
+          <div class="aspect-square rounded bg-emerald-300"></div>
+          <div class="aspect-square rounded border-2 border-amber-400 bg-amber-200"></div>
+          <div class="aspect-square rounded bg-emerald-300"></div>
+          <div class="aspect-square rounded bg-slate-300 opacity-60"></div>
+          <div class="aspect-square rounded bg-emerald-300"></div>
+          <div class="aspect-square rounded bg-emerald-300"></div>
+          <div class="aspect-square rounded bg-emerald-300"></div>
+          <div class="aspect-square rounded bg-emerald-300"></div>
+          <div class="aspect-square rounded bg-emerald-300"></div>
+        </div>
+      </div>
+      <div class="p-5">
+        <h2 class="text-lg font-semibold">1. 바둑판 대시보드</h2>
+        <p class="mt-1 text-sm text-slate-500">
+          호실별 상태 한눈에 — 정상 / 이상(점멸) / 저전력 / 오프라인.
+          필터, 임계 시간 설정, 알림 사이드바.
+        </p>
+        <div class="mt-3 flex items-center gap-1 text-sm font-medium text-brand-600 group-hover:gap-2">
+          열기 <i data-lucide="arrow-right" class="h-4 w-4"></i>
+        </div>
+      </div>
+    </a>
+
+    <a href="room-detail.html" class="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-lg">
+      <div class="aspect-video bg-gradient-to-br from-red-500/10 to-orange-500/5 p-6">
+        <div class="mb-3 inline-flex items-center gap-1 rounded-full bg-red-100 px-2 py-0.5 text-xs font-semibold text-red-700">
+          <i data-lucide="alert-triangle" class="h-3 w-3"></i> 방 상세 (이상 상태)
+        </div>
+        <div class="space-y-1.5">
+          <div class="flex items-center gap-2">
+            <div class="h-6 w-6 shrink-0 rounded bg-emerald-300"></div>
+            <div class="h-6 flex-1 rounded bg-slate-200"></div>
+            <div class="h-6 w-10 rounded bg-emerald-500/80"></div>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="h-6 w-6 shrink-0 rounded bg-red-300"></div>
+            <div class="h-6 flex-1 rounded bg-slate-200"></div>
+            <div class="h-6 w-10 rounded bg-emerald-500/80"></div>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="h-6 w-6 shrink-0 rounded bg-amber-300"></div>
+            <div class="h-6 flex-1 rounded bg-slate-200"></div>
+            <div class="h-6 w-10 rounded bg-slate-300"></div>
+          </div>
+        </div>
+      </div>
+      <div class="p-5">
+        <h2 class="text-lg font-semibold">2. 방 상세 페이지</h2>
+        <p class="mt-1 text-sm text-slate-500">
+          디바이스별 최근 활동, 알림 ON/OFF 토글, 임계치 커스터마이즈,
+          24h 활동 타임라인, 거주자·가족 정보.
+        </p>
+        <div class="mt-3 flex items-center gap-1 text-sm font-medium text-brand-600 group-hover:gap-2">
+          열기 <i data-lucide="arrow-right" class="h-4 w-4"></i>
+        </div>
+      </div>
+    </a>
+
+    <a href="settings-aqara-connect.html" class="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-lg">
+      <div class="aspect-video bg-gradient-to-br from-slate-500/10 to-slate-700/5 p-6">
+        <div class="mb-3 inline-flex items-center gap-1 rounded-full bg-slate-200 px-2 py-0.5 text-xs font-semibold text-slate-700">
+          <i data-lucide="key-round" class="h-3 w-3"></i> 계정 관리 (Aqara 연결)
+        </div>
+        <div class="space-y-1.5">
+          <div class="flex items-center gap-2">
+            <div class="h-5 w-20 shrink-0 rounded bg-slate-200"></div>
+            <div class="h-5 flex-1 rounded bg-slate-100"></div>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="h-5 w-20 shrink-0 rounded bg-slate-200"></div>
+            <div class="h-5 flex-1 rounded bg-slate-100"></div>
+          </div>
+          <div class="mt-2 flex gap-2">
+            <div class="flex-1 rounded-lg border-2 border-brand-500 bg-brand-50 p-2 text-center text-[10px] font-semibold text-brand-700">Mode A2</div>
+            <div class="flex-1 rounded-lg border border-slate-200 bg-white p-2 text-center text-[10px] text-slate-500">Mode A1</div>
+            <div class="flex-1 rounded-lg border border-slate-200 bg-white p-2 text-center text-[10px] text-slate-500">Manual</div>
+          </div>
+        </div>
+      </div>
+      <div class="p-5">
+        <h2 class="text-lg font-semibold">4. Aqara 연결 설정</h2>
+        <p class="mt-1 text-sm text-slate-500">
+          App 정보·AccessToken·RefreshToken 통합 관리.
+          자동 갱신 상태, Mode A1/A2/Manual 재인증 선택, 감사 로그.
+        </p>
+        <div class="mt-3 flex items-center gap-1 text-sm font-medium text-brand-600 group-hover:gap-2">
+          열기 <i data-lucide="arrow-right" class="h-4 w-4"></i>
+        </div>
+      </div>
+    </a>
+
+    <a href="family-mobile.html" class="group col-span-full block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-lg md:col-span-2">
+      <div class="flex items-center gap-6 bg-gradient-to-r from-brand-500/10 to-emerald-500/5 p-6">
+        <!-- Phone preview -->
+        <div class="w-32 shrink-0 rounded-2xl border-[6px] border-slate-900 bg-slate-50 p-2 shadow-xl">
+          <div class="mb-2 h-1 w-6 rounded-full bg-slate-700"></div>
+          <div class="space-y-1.5">
+            <div class="h-3 rounded bg-slate-200"></div>
+            <div class="h-10 rounded bg-emerald-200"></div>
+            <div class="h-8 rounded bg-slate-100"></div>
+            <div class="h-8 rounded bg-slate-100"></div>
+          </div>
+        </div>
+        <div>
+          <div class="mb-2 inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-semibold text-emerald-700">
+            <i data-lucide="smartphone" class="h-3 w-3"></i> 가족 모바일 뷰
+          </div>
+          <h2 class="text-lg font-semibold">3. 가족용 모바일 반응형</h2>
+          <p class="mt-1 text-sm text-slate-500">
+            SMS OTP 로 로그인한 가족이 운영자가 승인한 "어머니의 방" 만 조회.
+            평면도 축소판 + 활동 타임라인 + KakaoTalk 알림톡 설정.
+          </p>
+        </div>
+        <div class="ml-auto hidden items-center gap-1 text-sm font-medium text-brand-600 group-hover:gap-2 md:flex">
+          열기 <i data-lucide="arrow-right" class="h-4 w-4"></i>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <footer class="mt-10 border-t border-slate-200 pt-6 text-center text-xs text-slate-500">
+    <div class="font-semibold text-slate-700">Aqara Life Korea</div>
+    <div class="mt-1">
+      <a href="https://www.aqaralife.kr/" class="hover:underline">aqaralife.kr</a> ·
+      <a href="mailto:support@aqara.kr" class="hover:underline">support@aqara.kr</a>
+    </div>
+    <div class="mt-2 text-slate-400">
+      본 데모는 디자인 제안용이며, 실제 서비스와 다를 수 있습니다. 모든 수치·호실 번호·거주자 정보는 가상의 예시입니다.
+    </div>
+  </footer>
+</div>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>굿네이버스 Care · 가족 모바일 뷰</title>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css"
+/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Pretendard Variable', 'Pretendard', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
+        colors: { brand: { 600: '#0d9488', 700: '#0f766e' } },
+      },
+    },
+  };
+</script>
+</head>
+
+<body class="min-h-screen bg-slate-200 font-sans text-slate-900 antialiased">
+
+<!-- 데스크톱에서 보기 좋게 디바이스 프레임 포함 — "iPhone"-ish mockup -->
+<div class="mx-auto flex min-h-screen max-w-screen-sm items-center justify-center p-6">
+
+  <!-- Phone frame -->
+  <div class="w-full max-w-[380px] overflow-hidden rounded-[2.5rem] border-[10px] border-slate-900 bg-slate-50 shadow-2xl">
+
+    <!-- Status bar -->
+    <div class="flex items-center justify-between bg-slate-900 px-6 py-2 text-xs text-white">
+      <span>9:14</span>
+      <span class="flex items-center gap-1">
+        <i data-lucide="signal" class="h-3 w-3"></i>
+        <i data-lucide="wifi" class="h-3 w-3"></i>
+        <i data-lucide="battery-full" class="h-3 w-3"></i>
+      </span>
+    </div>
+
+    <!-- App header -->
+    <header class="flex items-center gap-3 border-b border-slate-200 bg-white px-5 py-3">
+      <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand-600 text-white">
+        <i data-lucide="shield-check" class="h-4 w-4"></i>
+      </span>
+      <div>
+        <div class="text-sm font-semibold">굿네이버스 Care</div>
+        <div class="text-xs text-slate-500">김민수 (장남) · 가족용</div>
+      </div>
+      <button class="ml-auto grid h-8 w-8 place-items-center rounded-full border border-slate-200">
+        <i data-lucide="bell" class="h-4 w-4 text-slate-600"></i>
+      </button>
+    </header>
+
+    <!-- Main content -->
+    <main class="space-y-4 bg-slate-50 px-5 py-5 pb-24">
+
+      <!-- Room summary card -->
+      <section class="rounded-2xl bg-white p-5 shadow-sm">
+        <div class="mb-3 flex items-center justify-between">
+          <div>
+            <div class="text-xs text-slate-500">어머니의 방</div>
+            <h1 class="text-xl font-bold">서울 ○○센터 · 301호</h1>
+          </div>
+          <span class="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-700">
+            <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500"></span>
+            정상
+          </span>
+        </div>
+
+        <!-- Mini floorplan -->
+        <div class="relative rounded-xl bg-gradient-to-br from-slate-100 to-slate-50 p-4">
+          <div class="grid grid-cols-5 gap-1">
+            <!-- Simple floor plan simulation (5x4) -->
+            <div class="col-span-3 row-span-2 flex items-center justify-center rounded-lg border-2 border-slate-300 bg-white text-xs text-slate-500">
+              거실
+              <!-- motion sensor pin -->
+              <span class="absolute top-6 left-10 grid h-6 w-6 place-items-center rounded-full bg-emerald-500 text-white shadow-md">
+                <i data-lucide="footprints" class="h-3 w-3"></i>
+              </span>
+            </div>
+            <div class="col-span-2 flex items-center justify-center rounded-lg border-2 border-slate-300 bg-white text-xs text-slate-500">
+              침실
+              <span class="absolute top-6 right-8 grid h-6 w-6 place-items-center rounded-full bg-emerald-500 text-white shadow-md">
+                <i data-lucide="footprints" class="h-3 w-3"></i>
+              </span>
+            </div>
+            <div class="col-span-2 flex items-center justify-center rounded-lg border-2 border-slate-300 bg-white text-xs text-slate-500">
+              화장실
+            </div>
+            <div class="col-span-3 flex items-center justify-center rounded-lg border-2 border-slate-300 bg-white text-xs text-slate-500">
+              주방
+              <span class="absolute bottom-6 left-10 grid h-6 w-6 place-items-center rounded-full bg-slate-400 text-white shadow">
+                <i data-lucide="door-open" class="h-3 w-3"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3 flex items-center justify-between text-xs">
+          <div>
+            <span class="font-semibold">마지막 활동</span>
+            <span class="text-slate-500">· 거실 07:12 (2시간 2분 전)</span>
+          </div>
+          <button class="text-brand-600">확대 ↗</button>
+        </div>
+      </section>
+
+      <!-- Timeline -->
+      <section class="rounded-2xl bg-white p-5 shadow-sm">
+        <div class="mb-3 flex items-center justify-between">
+          <h2 class="flex items-center gap-2 text-sm font-semibold">
+            <i data-lucide="activity" class="h-4 w-4 text-slate-500"></i>
+            오늘 활동
+          </h2>
+          <a href="#" class="text-xs text-brand-600">전체</a>
+        </div>
+        <ol class="space-y-3 text-sm">
+          <li class="flex items-start gap-3">
+            <span class="mt-1 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-emerald-100 text-emerald-600">
+              <i data-lucide="footprints" class="h-3.5 w-3.5"></i>
+            </span>
+            <div class="flex-1">
+              <div><strong>07:12</strong> 거실 모션</div>
+              <div class="text-xs text-slate-500">아침 기상 추정</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-amber-100 text-amber-600">
+              <i data-lucide="door-open" class="h-3.5 w-3.5"></i>
+            </span>
+            <div class="flex-1">
+              <div><strong>07:35</strong> 화장실 도어 열림</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-emerald-100 text-emerald-600">
+              <i data-lucide="footprints" class="h-3.5 w-3.5"></i>
+            </span>
+            <div class="flex-1">
+              <div><strong>08:12</strong> 거실 모션 (여러 번)</div>
+              <div class="text-xs text-slate-500">식사 시간대 추정</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-slate-100 text-slate-500">
+              <i data-lucide="moon" class="h-3.5 w-3.5"></i>
+            </span>
+            <div class="flex-1">
+              <div class="text-slate-500"><strong class="text-slate-700">23:40 (어제)</strong> 침실 모션 (마지막)</div>
+              <div class="text-xs text-slate-500">취침 추정</div>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Alerts (해결됨) -->
+      <section class="rounded-2xl bg-white p-5 shadow-sm">
+        <div class="mb-3 flex items-center justify-between">
+          <h2 class="flex items-center gap-2 text-sm font-semibold">
+            <i data-lucide="bell-ring" class="h-4 w-4 text-slate-500"></i>
+            알림 기록
+          </h2>
+          <span class="text-xs text-slate-400">최근 7일 · 2건</span>
+        </div>
+        <ul class="space-y-2 text-sm">
+          <li class="flex items-start justify-between gap-3 rounded-lg border-l-2 border-emerald-400 bg-emerald-50 px-3 py-2">
+            <div>
+              <div class="font-medium">4시간 무활동 (해결됨)</div>
+              <div class="text-xs text-slate-500">2026-10-14 · 간호사 확인 완료</div>
+            </div>
+            <i data-lucide="check-circle" class="h-4 w-4 text-emerald-500"></i>
+          </li>
+          <li class="flex items-start justify-between gap-3 rounded-lg border-l-2 border-slate-300 bg-slate-50 px-3 py-2">
+            <div>
+              <div class="font-medium">배터리 교체 완료</div>
+              <div class="text-xs text-slate-500">2026-10-11 · 자동 알림</div>
+            </div>
+            <i data-lucide="battery-full" class="h-4 w-4 text-emerald-500"></i>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Preferences -->
+      <section class="rounded-2xl bg-white p-5 shadow-sm">
+        <h2 class="mb-3 flex items-center gap-2 text-sm font-semibold">
+          <i data-lucide="settings-2" class="h-4 w-4 text-slate-500"></i>
+          알림 수신 설정
+        </h2>
+        <div class="space-y-3 text-sm">
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="font-medium">카카오톡 알림톡</div>
+              <div class="text-xs text-slate-500">010-••••-1234</div>
+            </div>
+            <label class="inline-flex cursor-pointer items-center">
+              <input type="checkbox" checked class="peer sr-only" />
+              <span class="relative inline-block h-5 w-9 rounded-full bg-slate-200 peer-checked:bg-emerald-500">
+                <span class="absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-white transition peer-checked:left-[1.1rem]"></span>
+              </span>
+            </label>
+          </div>
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="font-medium">SMS</div>
+              <div class="text-xs text-slate-500">백업용</div>
+            </div>
+            <label class="inline-flex cursor-pointer items-center">
+              <input type="checkbox" class="peer sr-only" />
+              <span class="relative inline-block h-5 w-9 rounded-full bg-slate-200 peer-checked:bg-emerald-500">
+                <span class="absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-white transition peer-checked:left-[1.1rem]"></span>
+              </span>
+            </label>
+          </div>
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="font-medium">방해 금지 시간</div>
+              <div class="text-xs text-slate-500">심각 알림은 예외</div>
+            </div>
+            <span class="rounded-md bg-slate-100 px-2 py-1 text-xs">23:00–06:00</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bottom nav -->
+    <nav class="fixed bottom-6 left-1/2 flex -translate-x-1/2 gap-1 rounded-full border border-slate-200 bg-white px-2 py-1.5 shadow-2xl">
+      <button class="flex flex-col items-center rounded-full bg-brand-600 px-4 py-1.5 text-white">
+        <i data-lucide="home" class="h-4 w-4"></i>
+        <span class="text-[10px]">홈</span>
+      </button>
+      <button class="flex flex-col items-center px-4 py-1.5 text-slate-500">
+        <i data-lucide="activity" class="h-4 w-4"></i>
+        <span class="text-[10px]">활동</span>
+      </button>
+      <button class="flex flex-col items-center px-4 py-1.5 text-slate-500">
+        <i data-lucide="bell" class="h-4 w-4"></i>
+        <span class="text-[10px]">알림</span>
+      </button>
+      <button class="flex flex-col items-center px-4 py-1.5 text-slate-500">
+        <i data-lucide="user" class="h-4 w-4"></i>
+        <span class="text-[10px]">계정</span>
+      </button>
+    </nav>
+
+  </div>
+</div>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
